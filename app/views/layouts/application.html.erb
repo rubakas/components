@@ -23,6 +23,11 @@
   </head>
 
   <body>
+    <%= render Components::Navbar do |nav| %>
+      <%= nav.item("Home", root_path, icon: "bi bi-house") %>
+      <%= nav.item("Login", new_session_path, icon: "bi bi-box-arrow-in-right") %>
+      <%= nav.item("Password", new_password_path, icon: "bi bi-keyboard") %>
+    <% end %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
       <%= render Components::Flash.new(flash:) %>
