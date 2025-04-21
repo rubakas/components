@@ -2,7 +2,7 @@
 
 pin "application"
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
-pin "@hotwired/stimulus", to: "stimulus.min.js"
+pin "@hotwired/stimulus", to: "@hotwired--stimulus.js" # @3.2.2
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "tw-animate-css" # @1.2.5
@@ -18,3 +18,7 @@ pin "lodash.isplainobject" # @4.0.6
 pin "lodash.merge" # @4.6.2
 pin "postcss-selector-parser" # @6.0.10
 pin "util-deprecate" # @1.0.2
+pin "mustache" # @4.2.0
+pin "embla-carousel" # @8.6.0
+pin "@stimulus-components/notification", to: "@stimulus-components--notification.js" # @3.0.0
+pin "stimulus-use" # @0.52.3
