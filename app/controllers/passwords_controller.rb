@@ -3,6 +3,7 @@ class PasswordsController < ApplicationController
   before_action :set_user_by_token, only: %i[ edit update ]
 
   def new
+    render Views::Passwords::New.new(email_address: params[:email_address])
   end
 
   def create
@@ -14,6 +15,7 @@ class PasswordsController < ApplicationController
   end
 
   def edit
+    render Views::Passwords::Edit.new(token: params[:token])
   end
 
   def update
@@ -25,9 +27,10 @@ class PasswordsController < ApplicationController
   end
 
   private
-    def set_user_by_token
-      @user = User.find_by_password_reset_token!(params[:token])
-    rescue ActiveSupport::MessageVerifier::InvalidSignature
-      redirect_to new_password_path, alert: "Password reset link is invalid or has expired."
-    end
+
+  def set_user_by_token
+    @user = User.find_by_password_reset_token!(params[:token])
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    redirect_to new_password_path, alert: "Password reset link is invalid or has expired."
+  end
 end
