@@ -6,7 +6,7 @@ class Views::Passwords::Edit < Views::Base
   def view_template
     div(class: "mx-auto md:w-2/3 w-full grid gap-3") do
       Heading(level: 1) { "Forgot your password?" }
-      Form(action: password_url(@token), method: :put, class: "w-2/3 space-y-6") do
+      Form(action: password_url(@token), method: :put, class: "sm:w-2/3 space-y-6") do
         FormField do
           FormFieldLabel(for: "password") { "Password" }
           Input(

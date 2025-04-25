@@ -7,7 +7,7 @@ class Views::Sessions::New < Views::Base
   def view_template
     div(class: "mx-auto md:w-2/3 w-full grid gap-3") do
       Heading(level: 1) { "Sign in" }
-      Form(action: session_url, method: :post, class: "w-2/3 space-y-6") do
+      Form(action: session_url, method: :post, class: "sm:w-2/3 space-y-6") do
         FormField do
           FormFieldLabel(for: "email") { "Email" }
           Input(

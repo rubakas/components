@@ -5,7 +5,7 @@ class Components::Navbar < Components::Base
     nav class: "container bg-light dark:bg-dark fixed md:sticky bottom-0 w-full h-auto " do
       div class: "flex-nowrap flex items-center" do
         a href: root_path, class: "hidden md:block p-2 ps-0 pe-12" do
-          Heading { "Brand" }
+          Heading(level: 1) { "Brand" }
         end
 
         div class: "flex wrap justify-between w-full" do
@@ -35,7 +35,7 @@ class Components::Navbar < Components::Base
 
   def element(text, icon:)
     div do
-      div { i(class: "text-base md:text-sm relative #{icon}") }
+      div { i(class: "text-2xl relative #{icon}") }
       div(class: "text-sm") do
         Text { text }
       end
